@@ -1,0 +1,14 @@
+{
+  "name": "translab",
+  "version": "0.0.1",
+  "description": "proyecto translab para bip",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "transLab"
+  ],
+  "author": "Natalia Lucero",
+  "license": "ISC"
+}
