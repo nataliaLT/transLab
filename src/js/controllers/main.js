@@ -29,7 +29,7 @@ window.validarEmail = function(email){
 }
 
 window.validarContraseña= function(contraseña){
-    if(typeof(contraseña != )){
+    if(typeof(contraseña) != 'number'){
         return false;
     }
     if(contraseña.length > 8){
