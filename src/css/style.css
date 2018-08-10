@@ -1,6 +1,7 @@
 body{
     background-color: #313131;
 }
+/*Diseño para el logo y el titulo */
 img{
     width: 80%;
     margin-top: 60%;
@@ -11,4 +12,12 @@ h1{
     font-size: 20px;
     color: orange;
     transform: translate(85px,30px);
+}
+/*Diseño para el input y el boton */
+.login{
+   margin-top: 15%;
+}
+label{
+    margin-top: 15%;
+    color: white;
 }
