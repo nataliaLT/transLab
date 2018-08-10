@@ -17,7 +17,28 @@ h1{
 .login{
    margin-top: 15%;
 }
-label{
+p{
     margin-top: 15%;
     color: white;
+}
+/*---------------------------------------------------------------*/
+/*Diseño para el registro*/
+h4{
+    color: orange;
+    text-align: center;
+    margin-top: 30%;
+}
+/*Diseño para formulario*/
+.formulario{
+    margin-top: 10%;
+    color: white;
+    
+}
+#correo{
+    margin-bottom: 1%;
+}
+
+#regis a {
+    color: orange;
+    text-decoration: none;
 }
