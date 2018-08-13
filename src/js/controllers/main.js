@@ -5,7 +5,7 @@ function registrar(){
     const contraseña= document.getElementById('contraseña').value;
     firebase.auth().createUserWithEmailAndPassword(correo, contraseña)
     .the((Response)=>{
-        location.href= "../index.html"
+        location.href= "home.html";
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -18,51 +18,22 @@ function registrar(){
 }
 formulario.addEventListener('submit', registrar)
 
-//............................................................Login...............................
-//guardo en una variable los datos que ingreso para poder manejar el evento
-let inicio= document.getElementById('inicio');
-
-//funcion para ingresar usuarios registrados 
-function login(evento) {
-    // preventDefault() detiene el evento, en este caso el envio no ocurre.
-    evento.preventDefault();
-    const correo2 = document.getElementById('correo2').value;
-    const contraseña2 = document.getElementById('contraseña2').value;
-
-        firebase.auth().signInWithEmailAndPassword(correo2, contraseña2)
-        .then((Response)=> {
-          location.href ="home.html";
-        })
-        .catch(function(error) {
-            let errorCode = error.code;
-            alert(errorCode);
-        });
-    };
-
-//se ejecuta la funcion
-inicio.addEventListener('submit', login);
-
-
-//funcion para asegurarse que el usuario ingreso con exito
-function observador (){
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log('existe')
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          // ...
-        } else {
-          // User is signed out.
-          console.log('no existe')
-          // ...
-        }
-      });
-      
+//................................... menu
+//funcionalidad del side Menú
+function toggleMenu() { // añadir función onclick="toggleMenu()" al botón del nav bar y al botón cerrar.
+  if (sideMenu.className.indexOf("menu_closed") >= 0) { // primero revisamos si la clase d-none esta
+    openMenu();  // si esta la clase quiere decir que el menú esta cerrado, asi que llamamos la funcion para abrirlo
+  } else {
+    closeMenu(); //si no esta la clase, le indicamos que cierre el menu
+  }
 }
-observador();
+
+function openMenu() {
+  sideMenu.classList.remove('menu_closed'); // quitando clase display-none
+  sideMenu.classList.add('menu_open');
+}
+
+function closeMenu() {
+  sideMenu.classList.add('menu_closed'); // añadimos la clase display-none
+  sideMenu.classList.remove('menu_open');
+}
