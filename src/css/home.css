@@ -75,3 +75,21 @@ margin-bottom: 10%;
 width: 80%;
 height: 25%;
 }
+
+#tit{
+    background-color: orange;
+    padding-top:15%;
+    padding-bottom: 15%;
+}
+h6{
+    text-align: center;
+    color: white;
+}
+
+.accordion{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.btn-light{
+    background-color: white;
+}
