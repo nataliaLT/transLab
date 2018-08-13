@@ -11,5 +11,8 @@ saldo.addEventListener('click',()=>{
 })
 });
 const renderInfo= (data)=>{
-    mostrarSaldo.innerHTML =data.saldoTarjeta;
+    mostrarSaldo.innerHTML +=
+    ` <div class="titulo">Saldo Total</div>
+    <div class="mostrarSaldo">${data.saldoTarjeta}</div>
+    `
 }
