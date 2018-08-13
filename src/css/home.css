@@ -57,6 +57,21 @@ margin-top: 20%;
 }
 .btnver{
     margin-top: 5%;
-    margin-bottom: 40%;
+    margin-bottom: 10%;
     margin-left: 35%;
+}
+.titulo{
+    background-color: #313131;
+    margin-left: 10%;
+    width: 80%;
+    height: 10%;
+    color: white;
+    text-align: center;
+}
+#mostrarSaldo{
+background-color: orange;
+margin-left: 10%;
+margin-bottom: 10%;
+width: 80%;
+height: 25%;
 }

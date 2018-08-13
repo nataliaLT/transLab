@@ -6,6 +6,10 @@ saldo.addEventListener('click',()=>{
     fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${tarjeta}`)//llamamos a la api
     .then(response => response.json())
     .then(data=>{
-        console.log(data)
+        console.log(data);
+        renderInfo(data);
 })
 });
+const renderInfo= (data)=>{
+    mostrarSaldo.innerHTML =data.saldoTarjeta;
+}
