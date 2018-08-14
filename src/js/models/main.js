@@ -37,3 +37,4 @@ function closeMenu() {
   sideMenu.classList.add('menu_closed'); // añadimos la clase display-none
   sideMenu.classList.remove('menu_open');
 }
+

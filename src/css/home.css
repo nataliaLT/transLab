@@ -1,8 +1,7 @@
-/*Menu..................................*/
-/*Hacemos que el menu adopte la posición más arriba posible*/
 body{
     background-color: gray;
 }
+/*Hacemos que el menu adopte la posición más arriba posible*/
 .menu{
     position: absolute;
     top:0;
@@ -31,16 +30,14 @@ body{
     margin-top: 20px;
 }
 
-.nav-link{
-    color: white;
-}
 @media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
         width: 20vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
     }
+
     .menu_closed{
         left:-20vw;
-}
+    }
 }
 
 #botones{
@@ -92,4 +89,23 @@ h6{
 }
 .btn-light{
     background-color: white;
+}
+/*------------------------Perfil*/
+.foto{
+background-color: orange;
+height: 50%;
+padding-bottom: 40%;
+}
+.imprimirCorreo{
+    background-color: white;
+    margin-top: 15%;
+    margin-left: 25%;
+    border: solid black 1px;
+    width: 50%;
+    height: 10%;
+    padding-bottom: 10%;
+}
+#numTar{
+    margin-top: 5%;
+    
 }
