@@ -1,22 +1,22 @@
-//......................guardar tarjeta
-function guardar(tarjeta2){
-    firebase.database().ref('/usuario').push(tarjeta2)
-    .then(()=>{
-      alert('Se agrego la tarjeta');
-      console.log('entra funcion')
-    })
-    .catch(function(erro){
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    });
-  }
+        
+let ingresarTarjeta = document.getElementById('numTar');
+const btnGuardar = document.getElementById('btnGuardar');
+//guardar datos
+btnGuardar.addEventListener('click', ()=>{
+  let tarjeta = ingresarTarjeta.value;
 
-let tarjeta1 = document.getElementById('numTar').value;
-console.log(tarjeta1);
-btnGuardar.addEventListener('click',()=>{
-    console.log('hola');
-    let tarjeta2 = {
-        tarjeta : tarjeta1.value
-    };
-    guardar(tarjeta2);
+  firebase.database().ref('usuario').push({
+    numeroTarjeta: tarjeta
+  });
+});
+
+firebase.database().ref('usuario')
+.on('value', function(snapshot){
+  let html = '';
+  snapshot.forEach((e)=>{
+    let element = e.val();
+    let  tarjeta= element.numeroTarjeta;
+    html += '<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'+tarjeta+'</h5>'
+  });
+  tar.innerHTML = html;
 });
