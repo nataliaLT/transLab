@@ -1,5 +1,5 @@
 body{
-    background-color: gray;
+    background-color:#BBB9B9;
 }
 /*Hacemos que el menu adopte la posición más arriba posible*/
 .menu{
@@ -116,10 +116,4 @@ padding-bottom: 40%;
 #calcular{
 margin-top: 5%;
 margin-left: 30%;
-}
-#tarifa{
-margin-left: 1%
-}
-#tarjeta1{
-
 }
