@@ -49,24 +49,40 @@
             <div class="row justify-content-center">
               <div class="col-12-auto">
                   <div class="input-group input-group-sm mb-3">
-                      <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
+                      <input id="tarNum" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
                  </div>
              </div>
             </div>
      </div>
-
+<!--select-->
      <div class="container">
-            <div class="row justify-content-md-center">
-              <div class="col col-lg-2">
-                    <select class="form-control form-control-sm">
-                            <option>Small select</option>
-                          </select>
-              </div>
-             <!-- <div class="col-md-auto">-->
-               
-              </div>
-            </div>
+        <div class="row">
+          <div class="col">
+              <label for="">Tarifa</label>
+              <select id="tarifa" class="form-control form-control-sm">
+                      <option>Small select</option>
+              </select>
           </div>
+          <div class="col">
+              <label for="">Tarjeta</label>
+              <select id="tarjeta1" class="form-control form-control-sm">
+                      <option>Small select</option>
+              </select>
+          </div>
+        </div>
+      </div>
+
+<!--Boton calcular-->
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+          <button id="calcular" type="button" class="btn btn-secondary">CALCULAR</button>
+      </div>
+    </div>
+  </div>
+
+            
+          
 
     
 
