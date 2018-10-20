@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trans-Lab</title>
-    <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trans-Lab</title>
+  <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/home.css">
 </head>
+
 <body>
-    <div class="pos-f-t">
-        <nav class="navbar navbar-dark bg-dark">
-          <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-        <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-          <div onclick="toggleMenu()" class="close_button">
-            <span aria-hidden="true">&times;</span>
-          </div>
-          <div class="menu_content">
-            <a class="nav-link" href="saldo.html">Ver Saldo</a>
-            <a class="nav-link" href="#">Calcular Tarifa</a>
-            <a class="nav-link" href="perfil.html">Perfil</a>
-            <a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a>
-            <a class="nav-link" href="home.html">Home</a>
-          </div>
-        </nav>
+  <!--menu-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#">TRANS - LAB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+        <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+        <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
+        <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas Frecuentes</a>
+        <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
       </div>
-<!--Input y boton para ver saldo-->
-      <div id="saldo" class="container ingresoTarjetas">
-          <div class="row">
-            <div class="col-12">
-                <form>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Número de tarjeta</label>
-                      <input type="email" class="form-control" id="nTarjeta" placeholder="Número de tarjeta">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Tarjetas</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </form>
-                  <button type="submit" class="btn btn-secondary btnver">Ver Saldo</button>
-                  <div id="mostrarSaldo" >
-                    <!-- aqui se imprime saldo -->
-                  </div>
-                  
-            </div>
-            </div>
+    </div>
+  </nav>
+
+
+  <!--Input y boton para ver saldo-->
+  <div id="saldo" class="container ingresoTarjetas">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <form class="contenidoversaldo">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Número de tarjeta</label>
+            <input type="email" class="form-control" id="nTarjeta" placeholder="Número de tarjeta">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Tarjetas</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </form>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block ver">Ver Saldo</button>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <div class="versaldo">
+          <h6 class="tituloversaldo">Ver Saldo</h6>
+          <div id="mostrarSaldo"></div>
         </div>
+      </div>
+    </div>
+  </div>
 
-</section>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
-            authDomain: "translab-686ee.firebaseapp.com",
-            databaseURL: "https://translab-686ee.firebaseio.com",
-            projectId: "translab-686ee",
-            storageBucket: "translab-686ee.appspot.com",
-            messagingSenderId: "362002867713"
-          };
-          firebase.initializeApp(config);
-        </script>
-    <script src="src/js/controllers/main.js"></script>
-    <script src="src/js/models/data.js"></script>
-    <script src="src/js/views/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
+      authDomain: "translab-686ee.firebaseapp.com",
+      databaseURL: "https://translab-686ee.firebaseio.com",
+      projectId: "translab-686ee",
+      storageBucket: "translab-686ee.appspot.com",
+      messagingSenderId: "362002867713"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="src/js/controllers/main.js"></script>
+  <script src="src/js/models/data.js"></script>
+  <script src="src/js/views/app.js"></script>
 </body>
+
 </html>
