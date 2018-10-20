@@ -94,12 +94,12 @@ text-align: center;
 }
 /*.......................estilos para pantalla tarifa................*/
 #tarNum{
-    margin-top: 10%;
+    margin-top: 30%;
 }
 #calcular{
-margin-top: 5%;
-margin-left: 30%;
+margin-top: 20%;
 }
+
 
 @media(max-width:425px){
     .botones{
