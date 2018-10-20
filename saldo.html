@@ -30,12 +30,10 @@
 
 
 <!--Input y boton para ver saldo-->
-<div class="container">
+<div id="saldo" class="container ingresoTarjetas">
     <div class="row justify-content-md-center">
-      <div class="col col-lg-2">
-      </div>
       <div class="col-md-auto">
-          <form>
+          <form class="contenidoversaldo">
               <div class="form-group">
                 <label for="exampleFormControlInput1">Número de tarjeta</label>
                 <input type="email" class="form-control" id="nTarjeta" placeholder="Número de tarjeta">
@@ -51,52 +49,19 @@
                 </select>
               </div>
             </form>
-            <button type="submit" class="btn btn-secondary btnver">Ver Saldo</button>
-      </div>
-      <div class="col col-lg-2">
-        3 of 3
+            <button type="submit" class="btn btn-secondary btn-lg btn-block ver">Ver Saldo</button>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        1 of 3
-      </div>
+    <div class="row justify-content-md-center">
       <div class="col-md-auto">
-        Variable width content
-      </div>
-      <div class="col col-lg-2">
-        3 of 3
+        <div class="versaldo">
+          <h6 class="tituloversaldo">Ver Saldo</h6>
+          <div id="mostrarSaldo"></div>
+        </div>
       </div>
     </div>
   </div>
-      <!-- <div id="saldo" class="container ingresoTarjetas">
-          <div class="row">
-            <div class="col-12">
-                <form>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Número de tarjeta</label>
-                      <input type="email" class="form-control" id="nTarjeta" placeholder="Número de tarjeta">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Tarjetas</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </form>
-                  <button type="submit" class="btn btn-secondary btnver">Ver Saldo</button> -->
-                  <!-- <div id="mostrarSaldo" >
-                    aqui se imprime saldo 
-                  </div>
-                  
-            </div>
-            </div>
-        </div>  -->
-
+      
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

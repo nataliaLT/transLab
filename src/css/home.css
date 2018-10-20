@@ -67,7 +67,31 @@ width:100%;
 }
 
 /*.......................Estilos para pantalla saldo...................*/
+.contenidoversaldo{
+    margin-top: 20%;
+}
+.ver{
+    height: 40px;
+    font-size: 1em;
+    background-color: orange;
+    border: 0px;
+}
+.versaldo{
+    width: 191px;
+    height: 100px;  
+    margin-top: 30%;
+    background-color: #282828; 
+}
+.tituloversaldo{
+padding-top: 5%;
+color: white;
+text-align: center;
+}
 
+#mostrarSaldo{
+    background-color: orange;
+    height: 70px;
+}
 /*.......................estilos para pantalla tarifa................*/
 #tarNum{
     margin-top: 10%;
@@ -91,11 +115,18 @@ margin-left: 30%;
     .correoImpreso{
         margin-left: 13%;
     }
+    .versaldo{
+        margin-left: 25%;
+    }
 }
 @media(max-width:375px){
     .correoImpreso{
         margin-left: 8%;
     }
+    .versaldo{
+        margin-left: 22%;
+    }
+
 }
 @media(max-width:320px){
     .fotoperfil{
@@ -103,5 +134,8 @@ margin-left: 30%;
     }
     .correoImpreso{
         margin-left: 1%;
+    }
+    .versaldo{
+        margin-left: 16%;
     }
 }
