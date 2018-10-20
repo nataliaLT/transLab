@@ -1,8 +1,11 @@
 //función registro de usuarios
 let formulario = document.getElementById('formulario').value;
 formulario.addEventListener('submit',e =>{
+    e.preventDefault();
     let correo = document.getElementById('correo').value;
     let contraseña = document.getElementById('contraseña').value;
+
+    if(correo.length != 0 && contraseña.length != 0){
     
     firebase.auth().createUserWithEmailAndPassword(correo, contraseña)
     .then((Response =>{
@@ -12,14 +15,11 @@ formulario.addEventListener('submit',e =>{
             contraseña: contraseña
         })
         console.log('ya envie los datos');
-    }).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      })
-    )}
-)
+    }))
+}
+})
+
+
 
 function registrar(){
     location.href="home.html";
