@@ -13,37 +13,23 @@
 
 </head>
 <body>
-<!--Menu desplegable-->
-<div class="pos-f-t">
-        <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
-        <nav class="navbar navbar-dark bg-dark">
-          <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
-          <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-        <!-- Vertical Navs dentro de un div-->
-        <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
-        <!--Borrar   <li class="nav-item"> -->
-        <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-          <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-          <!-- se agrega bg-dark para dar color negro al menu-->
-          <!-- Con float-left hacemos que flote hacia la izquierda -->
-          <div onclick="toggleMenu()" class="close_button">
-            <span aria-hidden="true">&times;</span>
-          </div>
-          <div class="menu_content">
-            <!--menu_content para separar el menu del botón x-->
-            <a class="nav-link" href="saldo.html">Ver Saldo</a>
-            <a class="nav-link" href="#">Calcular Tarifa</a>
-            <a class="nav-link" href="perfil.html">Perfil</a>
-            <a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a>
-            <a class="nav-link" href="home.html">Home</a>
-          </div>
-        </nav>
-      </div>
+  <!--Menu-->
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand" href="#">TRANS - LAB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+          <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+          <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
+          <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas Frecuentes</a>
+          <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
+        </div>
+      </div>
+    </nav>
       <!--input para tarjeta-->
       <div class="container">
             <div class="row justify-content-center">
@@ -53,37 +39,29 @@
                  </div>
              </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Tarifa</label>
+                    <select id="tarifa" class="form-control form-control-sm">
+                            <option>$660</option>
+                            <option>$680</option>
+                            <option>$760</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="">Tarjeta</label>
+                    <select id="tarjeta1" class="form-control form-control-sm">
+                            <option>123456</option>
+                    </select>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                  <div class="col-12-auto">
+                      <button id="calcular" type="button" class="btn btn-secondary calcular">CALCULAR</button>
+                  </div>
+                </div>
      </div>
-<!--select-->
-     <div class="container">
-        <div class="row">
-          <div class="col">
-              <label for="">Tarifa</label>
-              <select id="tarifa" class="form-control form-control-sm">
-                      <option>$660</option>
-                      <option>$680</option>
-                      <option>$760</option>
-              </select>
-          </div>
-          <div class="col">
-              <label for="">Tarjeta</label>
-              <select id="tarjeta1" class="form-control form-control-sm">
-                      <option>Small select</option>
-              </select>
-          </div>
-        </div>
-      </div>
 
-<!--Boton calcular-->
-<div class="container">
-    <div class="row">
-      <div class="col-12">
-          <button id="calcular" type="button" class="btn btn-secondary">CALCULAR</button>
-      </div>
-    </div>
-  </div>
-
-            
           
 
     

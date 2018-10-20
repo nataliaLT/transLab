@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trans-Lab</title>
-    <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="src/css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trans-Lab</title>
+  <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="src/css/home.css">
 
 </head>
+
 <body>
-        <div class="pos-f-t">
-                <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
-                <nav class="navbar navbar-dark bg-dark">
-                  <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
-                  <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </nav>
-                <!-- Vertical Navs dentro de un div-->
-                <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
-                <!--Borrar   <li class="nav-item"> -->
-                <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-                  <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-                  <!-- se agrega bg-dark para dar color negro al menu-->
-                  <!-- Con float-left hacemos que flote hacia la izquierda -->
-                  <div onclick="toggleMenu()" class="close_button">
-                    <span aria-hidden="true">&times;</span>
-                  </div>
-                  <div class="menu_content">
-                    <!--menu_content para separar el menu del botón x-->
-                    <a class="nav-link" href="saldo.html">Ver Saldo</a>
-                    <a class="nav-link" href="#">Calcular Tarifa</a>
-                    <a class="nav-link" href="perfil.html">Perfil</a>
-                    <a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a>
-                    <a class="nav-link" href="home.html">Home</a>
-                  </div>
-                </nav>
-              </div>
-<!--foto de perfil-->
-<section>
-<div class="foto">
-</div>
-</section>
+  <!--Menu-->
 
-<!--Div para imprimir el correo-->
-<div class="imprimirCorreo">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#">TRANS - LAB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+        <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+        <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
+        <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas Frecuentes</a>
+        <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
+      </div>
+    </div>
+  </nav>
 
-</div>
-<!--guardar tarjeta-->
-<div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12-auto">
-          <div class="input-group input-group-sm mb-3">
-              <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
-            </div>
-            <button id="btnGuardar" type="button" class="btn btn-secondary" style="width: 100%;" >Agregar Tarjeta</button>
-
-            <div id="tar"></div>
+  <!--foto perfil-->
+  <div class="container-fluid fondofoto">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <img src="assets /imagenes/perfil.png" alt="foto de perfil" srcset="" class="fotoperfil">
       </div>
     </div>
   </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-          crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-          crossorigin="anonymous"></script>
-  
-          <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-          <script>
-            // Initialize Firebase
-            var config = {
-              apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
-              authDomain: "translab-686ee.firebaseapp.com",
-              databaseURL: "https://translab-686ee.firebaseio.com",
-              projectId: "translab-686ee",
-              storageBucket: "translab-686ee.appspot.com",
-              messagingSenderId: "362002867713"
-            };
-            firebase.initializeApp(config);
-          </script>
-      <script src="src/js/controllers/main.js"></script>
-      <script src="src/js/controllers/perfil.js"></script>
-  </body>
-  </html>
+  <!--seccion de datos-->
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <div class="correoImpreso"></div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto contenidotarjeta">
+        <div class="input-group input-group-sm mb-3">
+          <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+            placeholder="Número de tarjeta">
+        </div>
+        <button id="btnGuardar" type="button" class="btn btn-secondary agregartarjeta" style="width: 100%;">Agregar
+          Tarjeta</button>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <div id="tar">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
+      authDomain: "translab-686ee.firebaseapp.com",
+      databaseURL: "https://translab-686ee.firebaseio.com",
+      projectId: "translab-686ee",
+      storageBucket: "translab-686ee.appspot.com",
+      messagingSenderId: "362002867713"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="src/js/controllers/main.js"></script>
+  <script src="src/js/controllers/perfil.js"></script>
+</body>
+
+</html>

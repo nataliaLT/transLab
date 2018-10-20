@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trans-Lab</title>
-    <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trans-Lab</title>
+  <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/style.css">
 </head>
+
 <body>
 
-<!--Registro-->
-<!--Formulario-->
-<div id="registrar">
-        <div>
-            <h4>REGISTRO</h4>
+  <!--Registro-->
+  <div id="registrar">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <h1 class="tituloRegistro">REGISTRO</h1>
         </div>
-        
-        <div class="container formulario">
-                <div class="row justify-content-center">
-                  <div class="col-12-auto">
-                        <form action="javascript:void(0)" id="formulario">
-                                <div class="form-group correo">
-                                  <label for="formGroupExampleInput2">Correo Electrónico</label>
-                                  <input id="correo" type="text" class="form-control" placeholder="Correo Electrónico">
-                                </div>
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput3">Contraseña</label>
-                                    <input id="contraseña" type="text" class="form-control" placeholder="Contraseña">
-                                </div>
-                                <button type="submit" class="btn btn-warning" onclick="registrar()">REGISTRAR</button>
-                        </form>
-                  </div>
-                </div>
-              </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-lg-4 formulario">
+          <form action="javascript:void(0)" id="formulario">
+            <div class="form-group correo">
+              <label for="formGroupExampleInput2">Correo Electrónico</label>
+              <input id="correo" type="text" class="form-control" placeholder="Correo Electrónico">
             </div>
-        
-        
-            
-        
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-                crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-                crossorigin="anonymous"></script>
-               
-<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
-    authDomain: "translab-686ee.firebaseapp.com",
-    databaseURL: "https://translab-686ee.firebaseio.com",
-    projectId: "translab-686ee",
-    storageBucket: "translab-686ee.appspot.com",
-    messagingSenderId: "362002867713"
-  };
-  firebase.initializeApp(config);
-</script>
-            <script src="src/js/controllers/main.js"></script>
-            <script src="src/js/models/data.js"></script>
-            <script src="src/js/views/app.js"></script>
-        </body>
-        </html>
+            <div class="form-group">
+              <label for="formGroupExampleInput3">Contraseña</label>
+              <input id="contraseña" type="password" class="form-control" placeholder="Contraseña">
+            </div>
+            <button type="submit" class="btn btn-warning" onclick="registrar()">REGISTRAR</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
+        authDomain: "translab-686ee.firebaseapp.com",
+        databaseURL: "https://translab-686ee.firebaseio.com",
+        projectId: "translab-686ee",
+        storageBucket: "translab-686ee.appspot.com",
+        messagingSenderId: "362002867713"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="src/js/controllers/main.js"></script>
+    <script src="src/js/models/data.js"></script>
+    <script src="src/js/views/app.js"></script>
+</body>
+
+</html>
