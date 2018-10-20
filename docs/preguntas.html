@@ -1,103 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trans-Lab</title>
-    <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="src/css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trans-Lab</title>
+  <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="src/css/home.css">
 
 </head>
+
 <body>
-<!--...................Pantalla de preguntas frecuentes -->
-        <div class="pos-f-t">
-            <nav class="navbar navbar-dark bg-dark">
-    
-              <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-            <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-              <div onclick="toggleMenu()" class="close_button">
-                <span aria-hidden="true">&times;</span>
-              </div>
-              <div class="menu_content">
-                <a class="nav-link" href="saldo.html">Ver Saldo</a>
-                <a class="nav-link" href="#">Calcular Tarifa</a>
-                <a class="nav-link" href="#">Perfil</a>
-                <a class="nav-link" href="#">Preguntas Frecuentes</a>
-                <a class="nav-link" href="home.html">Home</a>
-              </div>
-            </nav>
-          </div>
-        <!--Titulo-->
-          <div id="tit">
-            <h6>PREGUNTAS FRECUENTES</h6>
-          </div>
-        <!--Preguntas y respuestas-->
-        <div class="container">
-            <div class="row">
-              <div class="col-12">
-                  <div class="accordion" id="accordionExample">
-                      <div class="card">
-                        <div class="card-header" id="headingOne">
-                          <h5 class="mb-0">
-                            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Pregunta 1
-                            </button>
-                          </h5>
-                        </div>
-                    
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div class="card-header" id="headingTwo">
-                          <h5 class="mb-0">
-                            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Pregunta 2
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card">
-                        <div class="card-header" id="headingThree">
-                          <h5 class="mb-0">
-                            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                             Pregunta 3
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
+  <!--...................Pantalla de preguntas frecuentes -->
+  <!--Menu-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#">TRANS - LAB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+        <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+        <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
+        <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas Frecuentes</a>
+        <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!--Titulo-->
+  <div class="container-fluir">
+    <div class="row">
+      <div class="col-sm-12 fondopreguntas">
+        <h1 class="tituloPreguntas">PREGUNTAS FRECUENTES</h1>
+      </div>
+    </div>
+
+    <!--Preguntas y respuestas-->
+    <div class="container seccionpreguntas">
+        <div class="row">
+          <div class="col">
+              <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          <h5>Problemas y cuidados!</h5>
+                        </button>
+                      </h5>
+                    </div>
+      
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h6>¿Qué cuidados requiere la tarjeta para mantenerla en buenas condiciones?</h6>
+                            <p>Los cuidados de tu tarjeta son simples. Sólo debes evitar exponerla al calor, doblarla o quebrarla. Te recomendamos tenerla en un tarjetero plástico para aumentar su vida útil.</p>
+                            
+                           <h6>¿Dónde puedo cambiar mi tarjeta bip! portador en caso de falla?</h6>
+                            <p>Si tu tarjeta no funciona y tiene daños no atribuibles al usuario, llévala a una Oficina de Servicio al Cliente donde será cambiada por una nueva, sólo si se comprueba la falla. Si la tarjeta dañada tiene saldo, será traspasado en cinco días hábiles.</p>
+                            
+                            <h6>Si me equivoco de bus y paso la tarjeta, ¿me devuelven la carga?</h6>
+      
+                            <p>No, el pasaje se cobra automáticamente sin devolución.
+                        </p>
                       </div>
                     </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                          aria-expanded="false" aria-controls="collapseTwo">
+                          <h5>Puntos y Centros bip!</h5>
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                          <h6>¿Qué es un Centro bip!?</h6>
+                          <p>Son oficinas donde puedes comprar, cargar y consultar el saldo de tu bip!, además de activar cargas remotas. La mayoría de los Centro bip! son locales compartidos con servicios de atención de Servipag y ServiEstado. Para conocer su ubicación y horarios de atención pincha este <a class="link" href="http://www.tarjetabip.cl/donde-puedo-cargar.php">link</a>.</p>
+                          
+                         <h6>¿Qué es un Punto bip!?</h6>
+                          <p>Un Punto bip! es un comercio que además de vender productor y servicios, está asociado al sistema de carga bip! por lo cual sólo puedes cargar tu tarjeta bip! en ellos.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="mb-0">
+                        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseThree"
+                          aria-expanded="false" aria-controls="collapseThree">
+                          <h5>Tarjetas Bancarias</h5>
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                      <div class="card-body">
+                          <h6>¿Cómo cargo mi tarjeta bancaria?</h6>
+                          <p>Para usarla, sólo cárgala como cualquier bip!</p>
+                          
+                         <h6>¿Cómo bloqueo mi tarjeta bancaria?</h6>
+                          <p>En caso de robo o pérdida, podrás bloquearla y traspasar el dinero a una nueva tarjeta. Para bloquear tu tarjeta bancaria debes contactarte directamente con el banco emisor. El banco se debe encargar de solicitarnos el bloqueo y traspaso de saldo para que sea ejecutado.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- <div class="container seccionpreguntas">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h5>Problemas y cuidados de tarjeta bip!</h5>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <h6>¿Qué cuidados requiere la tarjeta para mantenerla en buenas condiciones?</h6>
+                      <p>Los cuidados de tu tarjeta son simples. Sólo debes evitar exponerla al calor, doblarla o quebrarla. Te recomendamos tenerla en un tarjetero plástico para aumentar su vida útil.</p>
+                      
+                     <h6>¿Dónde puedo cambiar mi tarjeta bip! portador en caso de falla?</h6>
+                      <p>Si tu tarjeta no funciona y tiene daños no atribuibles al usuario, llévala a una Oficina de Servicio al Cliente donde será cambiada por una nueva, sólo si se comprueba la falla. Si la tarjeta dañada tiene saldo, será traspasado en cinco días hábiles.</p>
+                      
+                      <h6>Si me equivoco de bus y paso la tarjeta, ¿me devuelven la carga?</h6>
+
+                      <p>No, el pasaje se cobra automáticamente sin devolución.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <h5>Puntos y Centros bip!</h5>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <h6>¿Qué es un Centro bip!?</h6>
+                    <p>Son oficinas donde puedes comprar, cargar y consultar el saldo de tu bip!, además de activar cargas remotas. La mayoría de los Centro bip! son locales compartidos con servicios de atención de Servipag y ServiEstado. Para conocer su ubicación y horarios de atención pincha este <a class="link" href="http://www.tarjetabip.cl/donde-puedo-cargar.php">link</a>.</p>
+                    
+                   <h6>¿Qué es un Punto bip!?</h6>
+                    <p>Un Punto bip! es un comercio que además de vender productor y servicios, está asociado al sistema de carga bip! por lo cual sólo puedes cargar tu tarjeta bip! en ellos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    <h5>Problemas y cuidados de tarjeta bip!</h5>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <h6>¿Cómo cargo mi tarjeta bancaria?</h6>
+                    <p>Para usarla, sólo cárgala como cualquier bip!</p>
+                    
+                   <h6>¿Cómo bloqueo mi tarjeta bancaria?</h6>
+                    <p>En caso de robo o pérdida, podrás bloquearla y traspasar el dinero a una nueva tarjeta. Para bloquear tu tarjeta bancaria debes contactarte directamente con el banco emisor. El banco se debe encargar de solicitarnos el bloqueo y traspaso de saldo para que sea ejecutado.</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script>
@@ -112,8 +208,9 @@
       };
       firebase.initializeApp(config);
     </script>
-<script src="src/js/controllers/main.js"></script>
-<script src="src/js/models/data.js"></script>
-<script src="src/js/views/app.js"></script>
+    <script src="src/js/controllers/main.js"></script>
+    <script src="src/js/models/data.js"></script>
+    <script src="src/js/views/app.js"></script>
 </body>
+
 </html>
