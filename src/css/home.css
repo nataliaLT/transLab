@@ -39,10 +39,12 @@ margin-bottom: 2%;
     color: orange;
 }
 /*------------------------Perfil*/
-.foto{
+.fondofoto{
 background-color: orange;
-height: 50%;
-padding-bottom: 40%;
+height: 250px;
+}
+.fotoperfil{
+    width: 150px;
 }
 .imprimirCorreo{
     background-color: white;
