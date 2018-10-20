@@ -20,16 +20,16 @@ body{
 .login{
    margin-top: 10%;
 }
-p{
+.noTienesCuenta{
     margin-top: 15%;
     color: white;
 }
 /*---------------------------------------------------------------*/
 /*Diseño para el registro*/
-h4{
+.tituloRegistro{
     color: orange;
     text-align: center;
-    margin-top: 30%;
+    margin-top: 40%;
 }
 /*Diseño para formulario*/
 .formulario{
@@ -60,10 +60,16 @@ margin-left: 25%;
     .login{
         margin-left: 25%;
     }
+    .formulario{
+        margin-left: 30%;
+    }
 }
 @media(min-width:1024px){
     .login{
         margin-left: 37%;
         margin-top:5%;
+    }
+    .formulario{
+        margin-left: 35%;
     }
 }
