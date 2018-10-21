@@ -1,3 +1,4 @@
+
 const saldo = document.getElementById('saldo');
 
 //Funcion para llamar a la api
@@ -12,7 +13,7 @@ saldo.addEventListener('click',()=>{
 })
 });
 const renderInfo= (data)=>{
-    mostrarSaldo.innerHTML +=
+    saldoo.innerHTML +=
     `
     <div class="versaldo"> 
     <h6 class="tituloversaldo">Ver Saldo</h6>
@@ -20,3 +21,4 @@ const renderInfo= (data)=>{
         </div>
     `
 }
+
