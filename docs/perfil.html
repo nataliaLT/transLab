@@ -45,25 +45,25 @@
   </div>
 
   <!--seccion de datos-->
-  <div class="container">
+  <div id="saldo" class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-        <div class="correoImpreso"></div>
+        <div id="informacion-usuario" class="correoImpreso"></div>
       </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto contenidotarjeta">
         <div class="input-group input-group-sm mb-3">
           <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-            placeholder="Número de tarjeta">
+            placeholder="Número de tarjeta" value="">
         </div>
-        <button id="btnGuardar" type="button" class="btn btn-secondary agregartarjeta" style="width: 100%;">Agregar
+        <button id="btnGuardar" type="submit" class="btn btn-secondary agregartarjeta" style="width: 100%;" onclick="guardarTarjetas()">Agregar
           Tarjeta</button>
       </div>
     </div>
-    <div class="row justify-content-md-center">
+    <div id="tar" class="row justify-content-md-center">
       <div class="col-md-auto">
-        <div id="tar">
+        <div id="tar"></div>
 
         </div>
       </div>
@@ -79,21 +79,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyA1x5slD71Pr0ASFydAeIMYlm-DCVPMVZI",
-      authDomain: "translab-686ee.firebaseapp.com",
-      databaseURL: "https://translab-686ee.firebaseio.com",
-      projectId: "translab-686ee",
-      storageBucket: "translab-686ee.appspot.com",
-      messagingSenderId: "362002867713"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="src/js/controllers/main.js"></script>
+ 
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAiob1seor2_Xfe_-CGEGISEFLMpbB5mn8",
+    authDomain: "translab2-a9f7c.firebaseapp.com",
+    databaseURL: "https://translab2-a9f7c.firebaseio.com",
+    projectId: "translab2-a9f7c",
+    storageBucket: "translab2-a9f7c.appspot.com",
+    messagingSenderId: "958671867899"
+  };
+  firebase.initializeApp(config);
+</script>
   <script src="src/js/controllers/perfil.js"></script>
+
 </body>
 
 </html>
