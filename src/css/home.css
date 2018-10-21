@@ -100,13 +100,30 @@ text-align: center;
     height: 70px;
 }
 /*.......................estilos para pantalla tarifa................*/
+.saldo{
+    margin-top: 10%;
+}
 #tarNum{
     margin-top: 30%;
 }
 #calcular{
 margin-top: 20%;
 }
-
+.tarjetas{
+    margin-top: 5%;
+}
+.tituloTarifa{
+    background-color: #282828;
+    height: 40px;
+}
+.subtitulo{
+    color: #F9F9F9;
+    text-align: center;
+}
+.valor{
+    background-color: orange;
+    text-align: center;
+}
 
 @media(max-width:425px){
     .botones{
