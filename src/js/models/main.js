@@ -1,48 +1,28 @@
-//función registro de usuarios
-let formulario = document.getElementById('formulario').value;
-formulario.addEventListener('submit',e =>{
+
+var db = firebase.firestore();
+const formulario = document.getElementById('formulario');
+
+formulario.addEventListener('submit', e =>  {
     e.preventDefault();
-    let correo = document.getElementById('correo').value;
-    let contraseña = document.getElementById('contraseña').value;
-
-    if(correo.length != 0 && contraseña.length != 0){
-    
-    firebase.auth().createUserWithEmailAndPassword(correo, contraseña)
-    .then((Response =>{
-        const userId = Response.user.Id;
-        firebase.database().ref('users/' + userId).set({
-            correo : correo,
-            contraseña: contraseña
+    const correo = document.getElementById('correo').value;
+    const contraseña = document.getElementById('contraseña').value;
+    if(correo.length != 0 && contraseña.length) {
+        console.log('if')
+        firebase.auth().createUserWithEmailAndPassword(correo, contraseña)
+        .then(Response => {
+            const userId = Response.user.uid;
+            firebase.database().ref('users/' + userId).set( {
+               correo: correo 
+            })
+            console.log('ya envie los datos');
+            
+                location.href="home.html";
+            
+            
         })
-        console.log('ya envie los datos');
-    }))
-}
-})
+    }
+});
 
 
 
-function registrar(){
-    location.href="home.html";
-}
 
-
-//función login
-let registrado = document.getElementById('registrado').value;
-
-function login(){
-let correo2 = document.getElementById('correo2').value;
-let contraseña2 = document.getElementById('contraseña2').value;
-
-firebase.auth().signInWithEmailAndPassword(correo2, contraseña2)
-.then((Response)=>{
-    location.href ="home.html";
-}).catch(function(error) {
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
-}
-
-registrado.addEventListener('submit', login);
