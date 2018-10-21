@@ -60,6 +60,9 @@ function guardarTarjetas(){
     console.log(tarjeta);
   const db = firebase.database();
   db.ref(`users/${currentUser.uid}`).child(`NumeroDeTarjeta`).push(tarjeta).key;
+
+  document.getElementById('tar').innerHTML = 
+  `<div class="contenedorNTarjeta"><p>${tarjeta}</p></div>`
  
   
   }
