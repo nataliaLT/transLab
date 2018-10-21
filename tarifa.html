@@ -31,35 +31,38 @@
       </div>
     </nav>
       <!--input para tarjeta-->
-      <div class="container">
+      <div id="saldo" class="container">
             <div class="row justify-content-center">
               <div class="col-12-auto">
                   <div class="input-group input-group-sm mb-3">
-                      <input id="tarNum" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
+                      <input id="nTarjeta" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
                  </div>
              </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="">Tarifa</label>
-                    <select id="tarifa" class="form-control form-control-sm">
-                            <option>$660</option>
-                            <option>$680</option>
-                            <option>$760</option>
+                    <select id="selectHorarios" class="form-control form-control-sm">
+                            <option value="630">$660</option>
+                            <option value="680">$680</option>
+                            <option value="760">$760</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">Tarjeta</label>
-                    <select id="tarjeta1" class="form-control form-control-sm">
-                            <option>123456</option>
+                    <select id="selectTarjetas" class="form-control form-control-sm">
+                            <option>12345</option>
                     </select>
                 </div>
               </div>
               <div class="row justify-content-center">
                   <div class="col-12-auto">
-                      <button id="calcular" type="button" class="btn btn-secondary calcular">CALCULAR</button>
+                      <button type="submit" class="btn btn-secondary calcular" >CALCULAR</button>
                   </div>
                 </div>
+
+                <div id="costoPasaje"></div>
+                <div id ="saldoFInal"></div>
      </div>
 
           
@@ -76,7 +79,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 
-        
+       
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -90,7 +93,6 @@
   };
   firebase.initializeApp(config);
 </script>
-    <script src="src/js/controllers/main.js"></script>
-    <script src="src/js/controllers/perfil.js"></script>
+    <script src="src/js/models/calcular.js"></script>
 </body>
 </html>

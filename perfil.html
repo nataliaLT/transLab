@@ -45,7 +45,7 @@
   </div>
 
   <!--seccion de datos-->
-  <div class="container">
+  <div id="saldo" class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
         <div id="informacion-usuario" class="correoImpreso"></div>
@@ -55,9 +55,9 @@
       <div class="col-md-auto contenidotarjeta">
         <div class="input-group input-group-sm mb-3">
           <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-            placeholder="Número de tarjeta">
+            placeholder="Número de tarjeta" value="">
         </div>
-        <button id="btnGuardar" type="submit" class="btn btn-secondary agregartarjeta" style="width: 100%;">Agregar
+        <button id="btnGuardar" type="submit" class="btn btn-secondary agregartarjeta" style="width: 100%;" onclick="guardarTarjetas()">Agregar
           Tarjeta</button>
       </div>
     </div>
@@ -94,7 +94,7 @@
   firebase.initializeApp(config);
 </script>
   <script src="src/js/controllers/perfil.js"></script>
-  <script src="src/js/controllers/ingresartarjeta.js"></script>
+
 </body>
 
 </html>
