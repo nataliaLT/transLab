@@ -35,29 +35,29 @@
             <div class="row justify-content-center">
               <div class="col-12-auto">
                   <div class="input-group input-group-sm mb-3">
-                      <input id="nTarjeta" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
+                      <input id="numTar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
                  </div>
              </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="">Tarifa</label>
-                    <select id="selectHorarios" class="form-control form-control-sm">
-                            <option value="630">$660</option>
-                            <option value="680">$680</option>
-                            <option value="760">$760</option>
+                    <select id="seleccionHorario" class="form-control form-control-sm">
+                            <option value="680">Horario Bajo</option>
+                            <option value="700">Horario Valle</option>
+                            <option value="780">Horario Punta</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">Tarjeta</label>
-                    <select id="selectTarjetas" class="form-control form-control-sm">
-                            <option>12345</option>
+                    <select id="tarjetasGuardadas" class="form-control form-control-sm">
+                            <!--ImprimirTarjetasConDom-->
                     </select>
                 </div>
               </div>
               <div class="row justify-content-center">
                   <div class="col-12-auto">
-                      <button type="submit" class="btn btn-secondary calcular" >CALCULAR</button>
+                      <button id="calcular" type="submit" class="btn btn-secondary calcular" onclick="calcularSaldo()">CALCULAR</button>
                   </div>
                 </div>
 
