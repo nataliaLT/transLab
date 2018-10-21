@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trans-Lab</title>
     <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="src/css/home.css">
 
 </head>
+
 <body>
-  <!--Menu-->
+    <!--Menu-->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <a class="navbar-brand" href="#">TRANS - LAB</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
-          <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
-          <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
-          <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas Frecuentes</a>
-          <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
-        </div>
-      </div>
-    </nav>
-      <!--input para tarjeta-->
-      <div id="saldo" class="container">
-            <div class="row justify-content-center">
-              <div class="col-12-auto">
-                  <div class="input-group input-group-sm mb-3">
-                      <input id="nTarjeta" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
-                 </div>
-             </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">TRANS - LAB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="saldo.html"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+                <a class="nav-item nav-link" href="tarifa.html"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+                <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user-alt"></i> Perfil</a>
+                <a class="nav-item nav-link" href="preguntas.html"><i class="fas fa-clipboard-list"></i> Preguntas
+                    Frecuentes</a>
+                <a class="nav-item nav-link" href="home.html"><i class="fas fa-arrow-right"></i> Home</a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for="">Tarifa</label>
-                    <select id="selectHorarios" class="form-control form-control-sm">
-                            <option value="630">$660</option>
-                            <option value="680">$680</option>
-                            <option value="760">$760</option>
-                    </select>
+        </div>
+    </nav>
+    <!--input para tarjeta-->
+    <div id="saldo" class="container saldo">
+        <div class="row justify-content-center">
+            <div class="col-12-auto">
+                <div class="input-group input-group-sm mb-3">
+                    <input id="numTar" type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Número de tarjeta">
                 </div>
-                <div class="col">
-                    <label for="">Tarjeta</label>
-                    <select id="selectTarjetas" class="form-control form-control-sm">
-                            <option>12345</option>
-                    </select>
-                </div>
-              </div>
-              <div class="row justify-content-center">
-                  <div class="col-12-auto">
-                      <button type="submit" class="btn btn-secondary calcular" >CALCULAR</button>
-                  </div>
-                </div>
-
-                <div id="costoPasaje"></div>
-                <div id ="saldoFInal"></div>
-     </div>
-
-          
-
-    
-
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="">Tarifa</label>
+                <select id="seleccionHorario" class="form-control form-control-sm">
+                    <option value="680">Horario Bajo</option>
+                    <option value="700">Horario Valle</option>
+                    <option value="780">Horario Punta</option>
+                </select>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12-auto">
+                <button id="calcular" type="submit" class="btn btn-secondary calcular" onclick="calcularSaldo()">CALCULAR</button>
+            </div>
+        </div>
+        <div id="costoPasaje"></div>
+        <div id="calculo"></div>
+    </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 
-       
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAiob1seor2_Xfe_-CGEGISEFLMpbB5mn8",
-    authDomain: "translab2-a9f7c.firebaseapp.com",
-    databaseURL: "https://translab2-a9f7c.firebaseio.com",
-    projectId: "translab2-a9f7c",
-    storageBucket: "translab2-a9f7c.appspot.com",
-    messagingSenderId: "958671867899"
-  };
-  firebase.initializeApp(config);
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAiob1seor2_Xfe_-CGEGISEFLMpbB5mn8",
+            authDomain: "translab2-a9f7c.firebaseapp.com",
+            databaseURL: "https://translab2-a9f7c.firebaseio.com",
+            projectId: "translab2-a9f7c",
+            storageBucket: "translab2-a9f7c.appspot.com",
+            messagingSenderId: "958671867899"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="src/js/models/calcular.js"></script>
 </body>
+
 </html>

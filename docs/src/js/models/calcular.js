@@ -1,31 +1,47 @@
-
-const saldo = document.getElementById('saldo');
-//Funcion para llamar a la api
-saldo.addEventListener('click',()=>{
-    
-    let tarjeta=document.getElementById("nTarjeta").value;//variable que guardara el numero de tarjeta ingresado
+function calcularSaldo() {
+    const tarjeta = document.getElementById('numTar').value;
+    document.getElementById('numTar').value = '';
     fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${tarjeta}`)//llamamos a la api
-    .then(response => response.json())
-    .then(data=>{
-        const dataBip = Object.values(data)
-        let saldoBip = dataBip[2];
+        .then(response => response.json())
+        .then(data => {
+            const Bip = Object.values(data) //variable que contiene los datos de la tarjeta
+            let saldo = Bip[2];
 
-        let saldoBipRep = Number(saldoBip.replace(/[$,.]+/g, ""));
+            let sacarSaldo = Number(saldo.replace(/[$,.]+/g, ""));//variable que me da el saldo
 
-        const combo = document.getElementById("selectHorarios");
-        const horarios = combo.options[combo.selectedIndex].value;
+            const arrHorario = document.getElementById("seleccionHorario");//array que contiene el select
 
-        const saldoFinal = saldoBipRep - horarios;
+            const tarifa = arrHorario.options[arrHorario.selectedIndex].value;
+
+            const calculo = sacarSaldo - tarifa;//variable que saca el calculo
 
 
-        document.getElementById("costoPasaje").innerHTML =
-            `<span class='col d-flex justify-content-center p-0 mt-4' id='txtCosto'>COSTO PASAJE</span>
-        <span class='col d-flex justify-content-center p-0' id='costoPasaje'>${horarios}</span>`;
-        document.getElementById("saldoFinal").innerHTML =
-            `<span class='col d-flex justify-content-center p-0 mt-3' id='txtCosto'>SALDO FINAL</span>
-        <span class='col d-flex justify-content-center p-0' id='costoPasaje'>${saldoFinal}</span>`;
-        console.log(data);
-        renderInfo(data);
-})
-});
-
+            document.getElementById("costoPasaje").innerHTML =
+                `<div class="row justify-content-center">
+                <div class="col-12-auto tarjetas">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header tituloTarifa">
+                         <p class="subtitulo">Costo Pasaje</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item valor">${tarifa}</li>
+                        </ul>
+                      </div>
+                </div>
+                
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12-auto tarjetas">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header tituloTarifa">
+                         <p class="subtitulo">Saldo Final</p> 
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item valor">${calculo}</li>
+                        </ul>
+                      </div>
+                </div>
+                
+              </div>`
+        })
+}

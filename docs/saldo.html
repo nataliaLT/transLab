@@ -41,23 +41,13 @@
             <label for="exampleFormControlInput1">Número de tarjeta</label>
             <input type="email" class="form-control" id="nTarjeta" placeholder="Número de tarjeta">
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Tarjetas</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
         </form>
-        <button type="submit" class="btn btn-secondary btn-lg btn-block ver">Ver Saldo</button>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block ver" >Ver Saldo</button>
       </div>
     </div>
     <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-          <div id="mostrarSaldo"></div>
+      <div id="saldoo" class="col-md-auto">
+         
         
       </div>
     </div>
@@ -86,9 +76,7 @@
   };
   firebase.initializeApp(config);
 </script>
-  <script src="src/js/controllers/main.js"></script>
   <script src="src/js/models/data.js"></script>
-  <script src="src/js/views/app.js"></script>
 </body>
 
 </html>
