@@ -6,4 +6,4 @@ Web app creada para la tarjeta bip. Con esta web podrás guardar tu numero de ta
 Ingresa [aqui](https://natalialt.github.io/transLab/) 
 
 ## Proyecto
-[Imagen]()
+
